@@ -1,29 +1,19 @@
 import PropTypes from 'prop-types';
 import css from './FriendList.module.css';
-import clsx from 'clsx';
+
+import { FriendListItem } from './FriendListItem/FriendListItem';
 
 export const FriendList = ({ friends }) => {
   return (
     <ul className={css.friendlist}>
       {friends.map(friend => {
         return (
-          <li key={friend.id} className={css.item}>
-            <span
-              className={clsx(
-                css.status,
-                friend.isOnline ? css.green : css.red
-              )}
-            >
-              {friend.isOnline}
-            </span>
-            <img
-              className="avatar"
-              src={friend.avatar}
-              alt="User avatar"
-              width="48"
-            />
-            <p className={css.name}>{friend.name}</p>
-          </li>
+          <FriendListItem
+            key={friend.id}
+            avatar={friend.avatar}
+            name={friend.name}
+            isOnline={friend.isOnline}
+          />
         );
       })}
     </ul>
