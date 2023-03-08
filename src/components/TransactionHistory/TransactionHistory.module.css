@@ -1,0 +1,21 @@
+.table {
+  margin: 30px auto;
+  width: 300px;
+  background-color: #dde0fd;
+
+  box-shadow: 0px 0px 5px #7a80b7;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: #929ae0;
+}
+th,
+td {
+  border: 1px solid #7a80b7;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: #fafbff;
+}
